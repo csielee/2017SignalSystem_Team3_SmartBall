@@ -141,4 +141,5 @@ void drawAxis() {
   text("velocity Z : "+nf(VZ,1,3) + "m/s",0,height);
   fill(0);
   text("total velocity : "+nf(V,1,3) + "m/s",width/2,height-25);
+  text("max velocity : "+nf(maxV,1,3) + "m/s",width/2,height-55);
 }

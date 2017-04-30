@@ -2,8 +2,8 @@ final int accel_lower = 20;
 final int accel_upper = -20;
 final int speed_lower = 20;
 final int speed_upper = -20;
-final int gyro_lower = 250;
-final int gyro_upper = -250;
+final int gyro_lower = 1000;
+final int gyro_upper = -1000;
 
 void convert() {
    if(stringDt != null) {
@@ -50,6 +50,7 @@ void convert() {
     if (stringGyro[i] != null) {
       stringGyro[i] = trim(stringGyro[i]);
       gyro[i] = float(stringGyro[i]);
+      gyro[i] *= 131.0;
       gyrocount++; 
     }
   }
@@ -86,6 +87,9 @@ void convert() {
  
   V = sqrt(VX*VX+VY*VY+VZ*VZ);
   v[v.length - 1] = map(V, speed_lower, speed_upper, height/4*3,height/4*3 + rect_h);
+  
+  if (V > maxV)
+    maxV = V;
 }
 
 void updateData() {

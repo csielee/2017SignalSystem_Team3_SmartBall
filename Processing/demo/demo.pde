@@ -13,7 +13,7 @@ int rect_h = 150;
 float dt;
 float VX = 0.0,VY = 0.0,VZ = 0.0;
 float AX,AY,AZ;
-float ACCEL,V;
+float ACCEL,V,maxV = 0.0;
 float currentTime;
 float realdt;
 int lastTime,resetTime = 0;
@@ -135,6 +135,7 @@ void mouseClicked() {
   VY = 0.0;
   VZ = 0.0;
   V = 0.0;
+  maxV = 0.0;
   
   for (int i = 0; i < vX.length; i++) { // center all variables
     vX[i] = height/2 + rect_h/2;
