@@ -59,6 +59,8 @@ void convert() {
     gyroY[gyroY.length - 1] = map(gyro[1], gyro_lower, gyro_upper, 0 , rect_h);
     gyroZ[gyroZ.length - 1] = map(gyro[2], gyro_lower, gyro_upper, height/4 , height/4 + rect_h);
     gyroTotal = sqrt(gyro[0]*gyro[0] + gyro[1] * gyro[1] + gyro[2]*gyro[2]);
+    if (maxG < gyroTotal)
+      maxG = gyroTotal;
     gyroT[gyroT.length - 1] = map(gyroTotal, gyro_lower, gyro_upper, height/4 , height/4 + rect_h);
   }
   

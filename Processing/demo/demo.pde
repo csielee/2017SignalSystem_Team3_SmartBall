@@ -42,6 +42,7 @@ float[] gyroX = new float[rect_w];
 float[] gyroY = new float[rect_w];
 float[] gyroZ = new float[rect_w];
 float[] gyroT = new float[rect_w];
+float maxG = 0.0;
 
 boolean drawValues  = false;
 boolean first = true;
@@ -130,18 +131,30 @@ void serialEvent (Serial serial) {
 }
 
 void mouseClicked() {
-  print("reset Velocity\n");
-  VX = 0.0;
-  VY = 0.0;
-  VZ = 0.0;
-  V = 0.0;
-  maxV = 0.0;
+    switch(showMode) {
+    case 0: // show accel velocity
+        print("reset Velocity\n");
+        VX = 0.0;
+        VY = 0.0;
+        VZ = 0.0;
+        V = 0.0;
+        maxV = 0.0;
   
-  for (int i = 0; i < vX.length; i++) { // center all variables
-    vX[i] = height/2 + rect_h/2;
-    vY[i] = height/2 + rect_h/2;
-    vZ[i] = (height/4)*3 + rect_h/2;
-    v[i] = (height/4)*3 + rect_h/2;
+        for (int i = 0; i < vX.length; i++) { // center all variables
+          vX[i] = height/2 + rect_h/2;
+          vY[i] = height/2 + rect_h/2;
+          vZ[i] = (height/4)*3 + rect_h/2;
+          v[i] = (height/4)*3 + rect_h/2;
+        }
+      break;
+    case 1: 
+
+      break;
+    case 2:
+        maxG = 0.0;
+      break;
+    default:
+      break;
   }
   currentTime = 0.0;
   resetTime = millis();

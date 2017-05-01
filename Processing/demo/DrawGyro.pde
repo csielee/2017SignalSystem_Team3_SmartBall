@@ -49,4 +49,6 @@ void drawGyro() {
 
   text("GYRO Z : "+nf(gyro[2],3,3) + " degree/s",0,height/2);
   text("total GYRO : " + nf(gyroTotal,3,2) + " degree/s",width/2, height/2);
+  fill(0);
+  text("max GYRO : " + nf(maxG,3,2) + " degree/s",width/2,height/2+20);
 }
