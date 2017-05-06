@@ -1,5 +1,5 @@
 import processing.serial.*;
-import toxi.geom.*;
+//import toxi.geom.*;
 
 Serial serial;
 
@@ -23,7 +23,7 @@ float yaw,pitch,roll;
 
 String[] stringq = new String[4];
 float[] q = new float[4];
-Quaternion quat = new Quaternion(1, 0, 0, 0);
+//Quaternion quat = new Quaternion(1, 0, 0, 0);
 
 String[] stringGyro = new String[3];
 float[] gyro = new float[3];

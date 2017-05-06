@@ -74,8 +74,8 @@ void convert() {
     }
   }
   
-  if (quatcount == 4)
-    quat.set(q[0],q[1],q[2],q[3]);
+  //if (quatcount == 4)
+    //quat.set(q[0],q[1],q[2],q[3]);
   
   ACCEL = sqrt(AX*AX+AY*AY+AZ*AZ);
   acc[acc.length - 1] = map(ACCEL, accel_lower, accel_upper, height/4, height/4 + rect_h);
